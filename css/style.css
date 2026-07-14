@@ -9,8 +9,8 @@
   --color-ink-deep: #0c1e1d;
   --color-border: #e2dbc9;
   --max-width: min(1160px, 92vw);
-  --font-display: "Archivo", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-body: "Archivo", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Sora", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: "Sora", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -278,6 +278,37 @@ a:hover {
 
 .key-dates strong {
   color: var(--color-ink);
+}
+
+/* ---------- Venue ---------- */
+
+.venue-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.25rem);
+  align-items: start;
+}
+
+.venue-info .key-dates {
+  margin-top: 1.25rem;
+}
+
+.venue-map {
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 14px rgba(22, 48, 47, 0.1);
+  line-height: 0;
+}
+
+.venue-map iframe {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .venue-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Footer ---------- */
