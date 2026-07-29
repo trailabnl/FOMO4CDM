@@ -197,9 +197,9 @@ a:hover {
 
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 230px));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   justify-content: center;
-  gap: clamp(1.75rem, 3vw, 3.25rem);
+  gap: clamp(1rem, 2vw, 2rem);
 }
 
 .person {
@@ -207,10 +207,12 @@ a:hover {
 }
 
 .person-photo {
+  display: block;
   width: clamp(100px, 8vw, 132px);
   height: clamp(100px, 8vw, 132px);
   border-radius: 50%;
   background: linear-gradient(160deg, var(--color-border), #d8cfb8);
+  object-fit: cover;
   margin: 0 auto 0.85rem;
   border: 3px solid #fff;
   box-shadow: 0 4px 14px rgba(22, 48, 47, 0.12);
@@ -305,6 +307,13 @@ a:hover {
   display: block;
 }
 
+@media (max-width: 900px) {
+  .people-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 210px));
+    justify-content: center;
+  }
+}
+
 @media (max-width: 800px) {
   .venue-content {
     grid-template-columns: 1fr;
@@ -381,6 +390,7 @@ a:hover {
 
   .people-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 200px));
+    justify-content: center;
     gap: 1.75rem;
   }
 
