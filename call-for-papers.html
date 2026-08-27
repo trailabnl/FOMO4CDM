@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FOMO4CDM — Call for Papers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #fbf9f4;
+      --bg-alt: #f2ede1;
+      --text: #201d18;
+      --muted: #6f6a5e;
+      --accent: #d98e4a;
+      --accent-dark: #b6702e;
+      --accent-light: #f3d19b;
+      --ink: #16302f;
+      --ink-deep: #0c1e1d;
+      --border: #e2dbc9;
+      --font-display: "Space Grotesk", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-body: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: #e9e5da;
+      line-height: 1.5;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    h1, h2, h3 { font-family: var(--font-display); }
+
+    /* ---------- Screen helper ---------- */
+    .no-print {
+      width: 210mm;
+      margin: 10mm auto 6mm;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #555;
+    }
+    .no-print button {
+      font: inherit;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.5rem 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ---------- Page ---------- */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 12mm;
+      background: var(--bg);
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ---------- Hero band ---------- */
+    .hero {
+      position: relative;
+      color: #f5f1e6;
+      padding: 7mm 14mm 5.5mm;
+      background:
+        linear-gradient(160deg, rgba(9, 22, 32, 0.86), rgba(12, 34, 48, 0.80)),
+        url("assets/hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .kicker {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.18;
+      color: #fff;
+      max-width: 30ch;
+      margin: 0 auto;
+    }
+
+    /* ---------- Facts strip ---------- */
+    .facts {
+      display: grid;
+      grid-template-columns: 0.85fr 1.1fr 0.9fr 1.15fr;
+      background: var(--ink);
+      color: #f5f1e6;
+    }
+    .facts div {
+      padding: 3mm 4mm;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .facts div:last-child { border-right: 0; }
+    .facts .label {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 0.2rem;
+    }
+    .facts .value { font-size: 0.82rem; font-weight: 600; line-height: 1.35; }
+    .facts .value a {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      line-height: 1.3;
+      color: #f5f1e6;
+      text-decoration: none;
+    }
+    .facts .value a + a { margin-top: 0.25rem; }
+    .facts .value a .tag {
+      display: block;
+      font-size: 0.55rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    /* ---------- Body ---------- */
+    .body {
+      flex: 1;
+      padding: 7mm 14mm 7mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+    }
+
+    section { width: 100%; }
+
+    h2 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 2mm;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--accent);
+      margin: 1.2mm auto 0;
+    }
+
+    .intro {
+      font-size: 0.86rem;
+      line-height: 1.5;
+      max-width: 78ch;
+      margin: 0 auto;
+    }
+    .intro strong { color: var(--ink); }
+
+    /* ---------- Topic chips ---------- */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+      justify-content: center;
+    }
+    .chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 1.2mm 3mm;
+    }
+
+    /* ---------- People ---------- */
+    .speakers, .orgs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4mm 5mm;
+      justify-content: center;
+    }
+
+    .person { width: 21mm; text-align: center; }
+    .person img,
+    .person .ph {
+      width: 18mm;
+      height: 18mm;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(22, 48, 47, 0.18);
+      display: block;
+      margin: 0 auto 1.5mm;
+      background: linear-gradient(160deg, var(--border), #d8cfb8);
+    }
+    .person .nm { font-size: 0.68rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+    .person .af { font-size: 0.6rem; color: var(--muted); line-height: 1.25; }
+
+    .keynote-person { width: 32mm; }
+    .keynote-person img { width: 22mm; height: 22mm; border-color: var(--accent-light); }
+    .keynote-person .nm { font-size: 0.74rem; }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2mm;
+      background: var(--ink);
+      color: #f5f1e6;
+      border-radius: 6px;
+      padding: 3.5mm 7mm;
+      max-width: 150mm;
+    }
+    .cta .label {
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+    }
+    .cta .d { font-size: 1.15rem; font-weight: 700; font-family: var(--font-display); }
+    .cta .what { font-size: 0.78rem; line-height: 1.45; max-width: 66ch; }
+    .cta .link {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.82rem;
+      font-family: var(--font-display);
+      padding: 2.6mm 6mm;
+      border-radius: 999px;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    /* ---------- Print ---------- */
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: #fff; }
+      .no-print { display: none; }
+      .page { margin: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button onclick="window.print()">Save as PDF&nbsp;/&nbsp;Print</button>
+    <p>Print dialog &rarr; Destination <strong>Save as PDF</strong>, margins <strong>None</strong>, enable <strong>Background graphics</strong>.</p>
+  </div>
+
+  <div class="page">
+
+    <div class="hero">
+      <div class="kicker">Call for Papers</div>
+      <h1>FOMO4CDM: Foundation Models for Clinical Decision Making</h1>
+    </div>
+
+    <div class="facts">
+      <div>
+        <div class="label">When</div>
+        <div class="value">21 October 2026</div>
+      </div>
+      <div>
+        <div class="label">Where</div>
+        <div class="value">Maastricht University<br />Dept. of Advanced Computing Sciences</div>
+      </div>
+      <div>
+        <div class="label">Submission deadline</div>
+        <div class="value">20 September 2026</div>
+      </div>
+      <div>
+        <div class="label">Useful links</div>
+        <div class="value">
+          <a href="https://trailabnl.github.io/FOMO4CDM"><span class="tag">Workshop</span>trailabnl.github.io/FOMO4CDM</a>
+          <a href="https://www.maastrichtuniversity.nl/bnaic2026"><span class="tag">Conference</span>maastrichtuniversity.nl/bnaic2026</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+
+      <section>
+        <h2>The Session</h2>
+        <p class="intro">
+          Foundation models are rapidly reshaping clinical AI. FOMO4CDM examines their role in clinical
+          decision making through three lenses: <strong>representation</strong>,
+          <strong>clinical reasoning</strong>, and <strong>interaction</strong>. We invite short
+          <strong>two-page extended abstracts</strong> on ongoing or completed work.
+        </p>
+      </section>
+
+      <section>
+        <h2>Topics</h2>
+        <div class="chips">
+          <span class="chip">Representation learning</span>
+          <span class="chip">Multimodal clinical data</span>
+          <span class="chip">Clinical reasoning &amp; decision support</span>
+          <span class="chip">Conversational &amp; interactive AI</span>
+          <span class="chip">Human&ndash;AI collaboration</span>
+          <span class="chip">Adaptation &amp; evaluation</span>
+          <span class="chip">Interpretability &amp; robustness</span>
+          <span class="chip">Responsible AI: fairness, privacy, safety</span>
+          <span class="chip">Real-world deployment</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Invited Keynote</h2>
+        <div class="speakers">
+          <div class="person keynote-person">
+            <img src="assets/devos.jpg" alt="Maarten De Vos" />
+            <div class="nm">Maarten De Vos</div>
+            <div class="af">Associate Professor, KU Leuven</div>
+          </div>
+          <div class="person keynote-person">
+            <div class="ph"></div>
+            <div class="nm">To be announced</div>
+            <div class="af">Second keynote speaker</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Session Organizers</h2>
+        <div class="orgs">
+          <div class="person">
+            <img src="assets/majid.jpeg" alt="Majid Lotfian Delouee" />
+            <div class="nm">Majid Lotfian Delouee</div>
+            <div class="af">Amsterdam UMC</div>
+          </div>
+          <div class="person">
+            <img src="assets/andrea.jpg" alt="Andrea Rafanelli" />
+            <div class="nm">Andrea Rafanelli</div>
+            <div class="af">Amsterdam UMC</div>
+          </div>
+          <div class="person">
+            <img src="assets/joe.jpg" alt="Joe C. Song" />
+            <div class="nm">Joe C. Song</div>
+            <div class="af">Universiteit van Amsterdam</div>
+          </div>
+          <div class="person">
+            <img src="assets/sjors.jpg" alt="Sjors in 't Veld" />
+            <div class="nm">Sjors in 't Veld</div>
+            <div class="af">Amsterdam UMC</div>
+          </div>
+          <div class="person">
+            <img src="assets/schut.jpg" alt="Martijn Schut" />
+            <div class="nm">Martijn Schut</div>
+            <div class="af">Professor, Amsterdam UMC</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cta">
+        <div class="label">Abstracts due</div>
+        <div class="d">20 September 2026</div>
+        <div class="what">
+          Two-page extended abstract &middot; via Google Form &middot; accepted work is invited to
+          present. Registration is part of BNAIC 2026 conference registration.
+        </div>
+        <a class="link" href="https://forms.gle/H6KcjGtiGJnSQRveA">Submit an abstract &rarr;</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
